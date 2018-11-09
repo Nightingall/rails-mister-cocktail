@@ -1,6 +1,15 @@
-<h1> Check out this cocktail </h1>
+<h1> Enjoy... </h1>
 
-<h3> <%= @cocktail.name %></h3>
+<h2> <%= @cocktail.name %></h2>
 
+<p>Works best with: </p>
+
+<% @cocktail.doses.each do |dose| %>
+<p> <%= dose.description %> <p>
+<% end %>
+
+<%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+
+<%= render "doses/form", cocktail: @cocktail, dose: @dose %>
 
 
